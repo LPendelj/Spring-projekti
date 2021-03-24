@@ -16,6 +16,7 @@ public class Zaposleni implements Serializable{
 	@Column(nullable = false, updatable = false)
 	private Long id;
 	
+	
 	private String ime;
 	private String email;
 	private String nazivPozicije;
@@ -27,6 +28,8 @@ public class Zaposleni implements Serializable{
 
 	
 	public Zaposleni(){}
+	
+
 	
 	
 	public Zaposleni(Long id, String ime, String email, String nazivPozicije, String brTelefona, String urlSlike,

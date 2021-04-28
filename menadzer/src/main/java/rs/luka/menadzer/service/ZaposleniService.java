@@ -4,12 +4,15 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import rs.luka.menadzer.model.Zaposleni;
 import rs.luka.menadzer.repo.ZaposleniRepo;
 
+@Component
 public class ZaposleniService {
 	private final ZaposleniRepo zaposleniRepo;
+	
 	
 	
 	@Autowired
@@ -31,11 +34,12 @@ public class ZaposleniService {
 		return zaposleniRepo.save(zaposleni);
 	}
 	
-	public void obrisiZaposleni(Long id) {
-		zaposleniRepo.obrisiZaposleniId(id);
+	public void  obrisiZaposleniId(Long id) {
+		zaposleniRepo.deleteZaposleniById(id);
+		
 	}
 	
 	public Zaposleni nadjiZaposleniId(Long id) {
-		return (Zaposleni) zaposleniRepo.nadjiZaposleniId(id).orElse(new Exception("zaposleni nije pronadjen"));
+		return zaposleniRepo.findZaposleniById(id);
 	}
 }

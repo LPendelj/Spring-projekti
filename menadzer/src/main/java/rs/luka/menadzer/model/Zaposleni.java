@@ -27,7 +27,9 @@ public class Zaposleni implements Serializable {
 	private String kod;
 	
 	
-	
+	public Zaposleni() {
+		super();
+	};
 	
 
 	public Zaposleni(Long id, String ime, String email, String posao, String brojTel, String slika, String kod) {

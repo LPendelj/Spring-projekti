@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Covid monitor app</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    
+  
+  </head>
+
+  <body>
+ <div class = "container">
+ 
+  
+  <h1>Ukupan broj Covid-19 slučajeva na dan </h1>
+<!--   ${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}
+		 ${#calendars.format(#calendars.createNow(), 'dd MMM yyyy HH:mm')}
+ -->  
+<br></br>
+
+ <div class="jumbotron">
+  <h1 class="display-4" th:text="${totalCases}">0</h1>
+  <p class="lead">Ukupan broj slučajeva zaraze.</p>
+</div>
+ 
+ <br></br>
+ 
+ 
+  <table>
+      <tr>
+        <th>Drzava</th>
+        <th>Oblast</th>
+        <th>Ukupno slučajeva</th>
+        <th>Broj novih slučajeva</th>
+      </tr>
+      <tr th:each="locationStat : ${locationStats}">
+       
+        <td th:text="${locationStat.country}"></td>
+        <td th:text="${locationStat.state}"></td>
+        <td th:text="${locationStat.latestTotal}">0</td>
+        <td th:text="${locationStat.delta}">0</td>
+      </tr>
+    </table>
+   </div>
+  
+  
+  </body>
+
+</html>

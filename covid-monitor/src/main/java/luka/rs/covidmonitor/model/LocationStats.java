@@ -5,6 +5,7 @@ public class LocationStats {
 	private String state;
 	private String country;
 	private int latestTotal;
+	private int delta;
 	
 	public LocationStats() {
 		
@@ -16,6 +17,16 @@ public class LocationStats {
 		this.latestTotal = latestTotal;
 	}
 	
+	
+	
+	public int getDelta() {
+		return delta;
+	}
+
+	public void setDelta(int delta) {
+		this.delta = delta;
+	}
+
 	public String getState() {
 		return state;
 	}

@@ -1,3 +1,9 @@
+spring.application.name: better-reads-data-loader
+
+datadump.location:
+     author: C:\Users\Acer\Downloads\ol_dump_authors_2021-09-22.txt
+     works: C:\Users\Acer\Downloads\ol_dump_works_2021-09-22.txt
+
 spring:
     data:
       cassandra:
